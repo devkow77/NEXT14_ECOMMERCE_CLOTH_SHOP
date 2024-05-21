@@ -6,72 +6,98 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import Image from "next/image";
 import Link from "next/link";
 
-interface Card {
-  name: string;
-  image: string;
-  href: string;
-}
-
-const cards: Card[] = [
-  {
-    name: "MEN",
-    image: "/men.jpg",
-    href: "/products/men",
-  },
-  {
-    name: "WOMEN",
-    image: "/women.jpg",
-    href: "/products/women",
-  },
-  {
-    name: "KIDS",
-    image: "/kids.jpg",
-    href: "/products/kids",
-  },
-];
-
 const Cards = () => {
   const cardsRef = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: cardsRef,
     offset: ["start start", "end start"],
   });
-  const opacity = useTransform(scrollYProgress, [0, 0.2, 0.5, 1], [0, 1, 0, 0]);
+  const containerOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.5, 1],
+    [0, 1, 1, 1],
+  );
+  const menOpacity = useTransform(scrollYProgress, [0, 0.2, 1], [0, 1, 1]);
+  const womenOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.2, 0.4, 1],
+    [0, 0, 1, 1],
+  );
+  const kidsOpacity = useTransform(
+    scrollYProgress,
+    [0, 0.4, 0.55, 1],
+    [0, 0, 1, 1],
+  );
 
   return (
     <motion.article
-      className="relative z-50 flex h-[150vh] flex-col items-center justify-center"
+      className="relative h-[250vh] bg-black/90"
       ref={cardsRef}
-      style={{ opacity }}
+      style={{ opacity: containerOpacity }}
     >
-      <Container>
-        <h1 className="mb-6 max-w-xl text-3xl font-black md:text-5xl">
-          CHOOSE YOUR <span className="text-slate-400">GENDER</span>
-        </h1>
-        <section className="grid grid-cols-1 gap-6 sm:grid-cols-2 md:grid-cols-3">
-          {cards.map(({ name, image, href }: Card) => (
-            <Link
-              href={href}
-              className="relative h-[200px] rounded-xl sm:h-[300px] md:h-[400px]"
+      <section className="fixed left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+        <Container>
+          <h2 className="mb-2 text-xl font-bold lg:text-2xl">
+            Choose Your Gender
+          </h2>
+          <p className="mb-6 text-sm opacity-80 lg:text-base">
+            Clothes are adapted to current fashion trends for each gender.
+          </p>
+          <div className="grid h-[460px] w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
+            <motion.div
+              className="relative rounded-xl bg-white/5"
+              style={{ opacity: menOpacity }}
             >
               <Image
-                src={image}
-                alt={name}
-                width={400}
-                height={400}
-                className="absolute h-full w-full rounded-xl object-cover"
+                src="/men.jpg"
+                alt="men"
+                width={500}
+                height={500}
+                className="absolute h-full w-full rounded-2xl object-cover object-center"
               />
-              <motion.div
-                className="absolute z-10 flex h-full w-full items-center justify-center rounded-xl bg-black/40 text-xl font-extrabold sm:text-3xl md:text-4xl"
-                initial={{ opacity: 1 }}
-                whileHover={{ opacity: 0 }}
-              >
-                {name}
-              </motion.div>
-            </Link>
-          ))}
-        </section>
-      </Container>
+              <Link href="/products/men">
+                <div className="absolute flex h-full w-full items-center justify-center rounded-xl bg-black/30 font-bold duration-300 hover:opacity-0 md:text-xl lg:text-3xl">
+                  MEN
+                </div>
+              </Link>
+            </motion.div>
+            <motion.div
+              className="relative rounded-2xl bg-white/5"
+              style={{ opacity: womenOpacity }}
+            >
+              <Image
+                src="/women.jpg"
+                alt="women"
+                width={500}
+                height={500}
+                className="absolute h-full w-full rounded-xl object-cover object-center"
+              />
+              <Link href="/products/women">
+                <div className="absolute flex h-full w-full items-center justify-center rounded-xl bg-black/50 font-bold duration-300 hover:opacity-0 md:text-xl lg:text-3xl">
+                  WOMEN
+                </div>
+              </Link>
+            </motion.div>
+            <motion.div
+              className="relative rounded-xl bg-white/5"
+              style={{ opacity: kidsOpacity }}
+            >
+              <Image
+                src="/kids.jpg"
+                alt="kids"
+                width={500}
+                height={500}
+                className="absolute h-full w-full rounded-xl object-cover object-center"
+              />
+              <Link href="/products/kids">
+                <div className="absolute flex h-full w-full items-center justify-center rounded-xl bg-black/70 font-bold duration-300 hover:opacity-0 md:text-xl lg:text-3xl">
+                  KIDS
+                </div>
+              </Link>
+            </motion.div>
+          </div>
+        </Container>
+      </section>
     </motion.article>
   );
 };

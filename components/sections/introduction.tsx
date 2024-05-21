@@ -14,8 +14,8 @@ const Introduction = () => {
   });
   const opacity = useTransform(
     scrollYProgress,
-    [0, 0.1, 0.3, 0.4, 0.6, 1],
-    [0, 1, 1, 0.4, 0.1, 0],
+    [0, 0.1, 0.3, 0.6, 1],
+    [0, 1, 1, 0.2, 0],
   );
   return (
     <motion.article
@@ -28,7 +28,7 @@ const Introduction = () => {
         <Container>
           <div>
             <h1 className="max-w-4xl pr-20 text-4xl font-black md:text-7xl">
-              FENDIE <br /> <span className="text-slate-400">BEST</span> CLOTHES
+              FENDIE <br /> <span className="text-red-500">BEST</span> CLOTHES
               IN NEW YORK
             </h1>
           </div>

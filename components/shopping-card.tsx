@@ -51,7 +51,7 @@ const ShoppingCard = () => {
         <SheetHeader className="mb-6">
           <SheetTitle>Shopping Cart</SheetTitle>
           <SheetDescription>
-            Currently you have {cartCount} items
+            Currently you have {cartCount} items in cart.
           </SheetDescription>
         </SheetHeader>
         {Number(cartCount) > 0 && (
@@ -77,7 +77,7 @@ const ShoppingCard = () => {
                       <p className="my-2 text-sm text-slate-300">{`${item.description?.substring(0, 80)}...`}</p>
                       <h2 className="font-semibold">
                         {item.price.toPrecision(5)} {item.currency} |{" "}
-                        <span className="text-red-400">
+                        <span className="text-red-500">
                           Amount: {item.quantity}
                         </span>
                       </h2>
@@ -124,7 +124,7 @@ const ShoppingCard = () => {
               disabled={cartCount === 0}
               onClick={handleCheckoutClick}
             >
-              Checkout 🫰
+              Checkout now
             </Button>
             <Button
               variant={"deleteProduct"}

@@ -22,7 +22,7 @@ const Opening = () => {
       ref={openingRef}
       style={{ opacity }}
     >
-      <div className="absolute left-0 top-0  w-full bg-slate-600 p-3 text-center text-sm">
+      <div className="absolute left-0 top-0  w-full bg-red-500 p-3 text-center text-sm">
         Unlock savings now! Enter code{" "}
         <span className="font-semibold">CODE10</span> at checkout before
         01.12.2024 to enjoy an exclusive 10% discount on your purchase. Don't
@@ -31,12 +31,10 @@ const Opening = () => {
       <Container className="w-full">
         <div className="space-y-4">
           <h1 className="text-4xl font-black md:text-7xl">
-            STEP UP
-            <span className="opacity-80">
-              <br /> YOUR STYLE
-            </span>
+            STEP <span className="text-red-500">UP</span>
+            <br /> YOUR STYLE
           </h1>
-          <h2 className="max-w-xl text-sm leading-6 md:text-base">
+          <h2 className="max-w-xl text-sm leading-6 opacity-80 md:text-base">
             Discover the latest trends and timeless classics for every occasion.
             Shop now and transform your wardrobe with our high-quality, stylish
             pieces!

@@ -20,7 +20,7 @@ const buttonVariants = cva(
         ghost:
           "hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50",
         link: "text-slate-900 underline-offset-4 hover:underline dark:text-slate-50",
-        buy: "dark:bg-green-400 dark:hover:bg-green-600 duration-200 text-white",
+        buy: "dark:bg-green-500 dark:hover:bg-green-700 duration-200 text-white",
         addToCart:
           "dark:bg-blue-400 dark:hover:bg-blue-600 duration-200 text-white",
         deleteProduct:
