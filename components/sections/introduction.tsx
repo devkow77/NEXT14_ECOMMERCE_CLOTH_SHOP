@@ -27,7 +27,7 @@ const Introduction = () => {
       <div className="relative flex h-[--header-height] flex-col items-start justify-center">
         <Container>
           <div>
-            <h1 className="max-w-4xl pr-20 text-4xl font-black md:text-7xl">
+            <h1 className="max-w-4xl pr-20 text-5xl font-black md:text-7xl">
               FENDIE <br /> <span className="text-red-500">BEST</span> CLOTHES
               IN NEW YORK
             </h1>

@@ -6,6 +6,7 @@ import ShoppingBag from "./shopping-bag";
 import DesktopMenu from "./desktop-menu";
 import ShoppingCard from "./shopping-card";
 import MobileMenu from "./mobile-menu";
+import PremieresCarousel from "./premieres-carousel";
 
 export {
   Container,
@@ -16,4 +17,5 @@ export {
   DesktopMenu,
   ShoppingCard,
   MobileMenu,
+  PremieresCarousel,
 };

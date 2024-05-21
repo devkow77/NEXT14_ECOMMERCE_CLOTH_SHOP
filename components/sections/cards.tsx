@@ -25,17 +25,17 @@ const Cards = () => {
   );
   const kidsOpacity = useTransform(
     scrollYProgress,
-    [0, 0.4, 0.55, 1],
+    [0, 0.4, 0.5, 1],
     [0, 0, 1, 1],
   );
 
   return (
     <motion.article
-      className="relative h-[250vh] bg-black/90"
+      className="relative z-10 h-[250vh] w-full bg-black/90"
       ref={cardsRef}
       style={{ opacity: containerOpacity }}
     >
-      <section className="fixed left-1/2 top-1/2 w-full -translate-x-1/2 -translate-y-1/2">
+      <section className="fixed top-1/2 w-full -translate-y-1/2">
         <Container>
           <h2 className="mb-2 text-xl font-bold lg:text-2xl">
             Choose Your Gender
