@@ -7,6 +7,7 @@ import DesktopMenu from "./desktop-menu";
 import ShoppingCard from "./shopping-card";
 import MobileMenu from "./mobile-menu";
 import PremieresCarousel from "./premieres-carousel";
+import FadeIn from "./fade-in";
 
 export {
   Container,
@@ -18,4 +19,5 @@ export {
   ShoppingCard,
   MobileMenu,
   PremieresCarousel,
+  FadeIn,
 };

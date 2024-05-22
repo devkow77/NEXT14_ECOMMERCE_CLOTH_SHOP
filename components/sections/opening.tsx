@@ -21,6 +21,9 @@ const Opening = () => {
       className="relative z-50 flex h-[100vh] flex-col items-start justify-center"
       ref={openingRef}
       style={{ opacity }}
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 1, delay: 0.5 }}
     >
       <div className="absolute left-0 top-0  w-full bg-red-500 p-3 text-center text-sm">
         Unlock savings now! Enter code{" "}

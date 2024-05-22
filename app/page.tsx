@@ -1,4 +1,10 @@
-import { Header, Cards, Premieres } from "@/components/sections/index";
+import {
+  Header,
+  Cards,
+  Premieres,
+  Policity,
+  Footer,
+} from "@/components/sections/index";
 
 export default function Home() {
   return (
@@ -6,6 +12,8 @@ export default function Home() {
       <Header />
       <Cards />
       <Premieres />
+      <Policity />
+      <Footer />
     </main>
   );
 }

@@ -14,8 +14,8 @@ const Cards = () => {
   });
   const containerOpacity = useTransform(
     scrollYProgress,
-    [0, 0.2, 0.5, 1],
-    [0, 1, 1, 1],
+    [0, 0.2, 0.6, 0.9, 1],
+    [0, 1, 1, 0, 0],
   );
   const menOpacity = useTransform(scrollYProgress, [0, 0.2, 1], [0, 1, 1]);
   const womenOpacity = useTransform(
