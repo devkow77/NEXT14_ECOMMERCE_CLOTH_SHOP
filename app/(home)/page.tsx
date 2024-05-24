@@ -3,7 +3,6 @@ import {
   Cards,
   Premieres,
   Policity,
-  Footer,
 } from "@/components/sections/index";
 
 export default function Home() {
@@ -13,7 +12,8 @@ export default function Home() {
       <Cards />
       <Premieres />
       <Policity />
-      <Footer />
     </main>
   );
 }
+
+Home.noLayout = true;

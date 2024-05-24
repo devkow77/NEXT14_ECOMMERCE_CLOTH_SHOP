@@ -9,8 +9,8 @@ const buttonVariants = cva(
   {
     variants: {
       variant: {
-        default:
-          "bg-slate-900 text-slate-50 hover:bg-slate-900/90 dark:bg-slate-50 dark:text-slate-900 dark:hover:bg-slate-50/90",
+        default: "bg-red-600 hover:bg-red-800 duration-200",
+        add: "bg-green-500 hover:bg-green-800 duration-200",
         destructive:
           "bg-red-500 text-slate-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-slate-50 dark:hover:bg-red-900/90",
         outline:
@@ -24,7 +24,7 @@ const buttonVariants = cva(
         addToCart:
           "dark:bg-blue-400 dark:hover:bg-blue-600 duration-200 text-white",
         deleteProduct:
-          "dark:bg-red-500 dark:hover:bg-red-700 duration-200 text-white ",
+          "dark:bg-red-600 dark:hover:bg-red-800 duration-200 text-white ",
       },
       size: {
         default: "h-10 px-4 py-2",

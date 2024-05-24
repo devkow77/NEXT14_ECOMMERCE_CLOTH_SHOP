@@ -10,7 +10,7 @@ const ShoppingBag = () => {
   return (
     <div onClick={handleCartClick} className="relative cursor-pointer">
       <ShoppingBasket />
-      <div className="absolute -bottom-3 left-4 rounded-full bg-red-500 px-2 py-1 text-xs font-semibold">
+      <div className="absolute -bottom-3 left-4 rounded-full bg-red-600 px-2 py-1 text-xs font-semibold">
         {cartCount}
       </div>
     </div>

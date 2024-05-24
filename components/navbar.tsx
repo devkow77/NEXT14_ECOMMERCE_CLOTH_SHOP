@@ -4,19 +4,22 @@ import {
   ThemeToggle,
   ShoppingBag,
   DesktopMenu,
-  MobileMenu,
+  HamburgerBtn,
 } from "@/components/index";
+import Link from "next/link";
 
 const Navbar = () => {
   return (
-    <nav className="sticky left-0 top-0 z-50 h-24 py-8">
+    <nav className="relative left-0 top-0 z-50 h-24 w-full py-8">
       <Container className="flex items-center justify-between">
-        <h1 className="font-bold text-white">Fendie</h1>
+        <Link href="/">
+          <h1 className="font-bold text-white">Fendie</h1>
+        </Link>
         <DesktopMenu />
         <div className="flex items-center gap-4">
           <ShoppingBag />
           <ThemeToggle />
-          <MobileMenu />
+          <HamburgerBtn />
         </div>
       </Container>
     </nav>

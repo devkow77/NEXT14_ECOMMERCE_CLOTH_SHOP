@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
-import "./globals.css";
-import { Providers, ShoppingCard } from "@/components/index";
+import "@/app/globals.css";
+import { Providers, ShoppingCard, Footer } from "@/components/index";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -21,6 +21,7 @@ export default function RootLayout({
         <Providers>
           {children}
           <ShoppingCard />
+          <Footer />
         </Providers>
       </body>
     </html>

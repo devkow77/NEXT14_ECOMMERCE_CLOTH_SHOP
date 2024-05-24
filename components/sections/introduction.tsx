@@ -19,39 +19,41 @@ const Introduction = () => {
   );
   return (
     <motion.article
-      className="relative h-[100vh]"
+      className="relative h-[120vh]"
       ref={introductionRef}
       style={{ opacity }}
     >
-      <Navbar />
-      <div className="relative flex h-[--header-height] flex-col items-start justify-center">
-        <Container>
-          <div>
-            <h1 className="max-w-4xl pr-20 text-5xl font-black md:text-7xl">
-              FENDIE <br /> <span className="text-red-500">BEST</span> CLOTHES
-              IN NEW YORK
-            </h1>
-          </div>
-          <div className="absolute -bottom-4 flex items-center gap-3">
-            <Link
-              href="https://www.facebook.com/"
-              target="_blank"
-              className="p-1"
-            >
-              <Facebook />
-            </Link>
-            <Link
-              href="https://www.instagram.com/"
-              target="_blank"
-              className="p-1"
-            >
-              <Instagram />
-            </Link>
-            <Link href="https://x.com/" target="_blank" className="p-1">
-              <Twitter />
-            </Link>
-          </div>
-        </Container>
+      <div className="fixed left-0 top-0 w-full">
+        <Navbar />
+        <div className="relative flex h-[--header-height] flex-col items-start justify-center">
+          <Container>
+            <div>
+              <h1 className="mb-[96px] max-w-4xl pr-20 text-5xl font-black md:text-7xl">
+                FENDIE <br /> <span className="text-red-600">BEST</span> CLOTHES
+                IN NEW YORK
+              </h1>
+            </div>
+            <div className="absolute bottom-8 flex items-center gap-3">
+              <Link
+                href="https://www.facebook.com/"
+                target="_blank"
+                className="p-1"
+              >
+                <Facebook />
+              </Link>
+              <Link
+                href="https://www.instagram.com/"
+                target="_blank"
+                className="p-1"
+              >
+                <Instagram />
+              </Link>
+              <Link href="https://x.com/" target="_blank" className="p-1">
+                <Twitter />
+              </Link>
+            </div>
+          </Container>
+        </div>
       </div>
     </motion.article>
   );

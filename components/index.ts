@@ -8,6 +8,11 @@ import ShoppingCard from "./shopping-card";
 import MobileMenu from "./mobile-menu";
 import PremieresCarousel from "./premieres-carousel";
 import FadeIn from "./fade-in";
+import HamburgerBtn from "./hamburger-btn";
+import FaqAccordion from "./faq-accordion";
+import Footer from "./footer";
+import ContactForm from "./contact-form";
+import GoogleMap from "./google-map";
 
 export {
   Container,
@@ -20,4 +25,9 @@ export {
   MobileMenu,
   PremieresCarousel,
   FadeIn,
+  HamburgerBtn,
+  FaqAccordion,
+  Footer,
+  ContactForm,
+  GoogleMap,
 };

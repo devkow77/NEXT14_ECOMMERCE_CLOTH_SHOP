@@ -25,7 +25,7 @@ const Opening = () => {
       animate={{ opacity: 1 }}
       transition={{ duration: 1, delay: 0.5 }}
     >
-      <div className="absolute left-0 top-0  w-full bg-red-500 p-3 text-center text-sm">
+      <div className="absolute left-0 top-0  w-full bg-red-600 p-3 text-center text-sm">
         Unlock savings now! Enter code{" "}
         <span className="font-semibold">CODE10</span> at checkout before
         01.12.2024 to enjoy an exclusive 10% discount on your purchase. Don't
@@ -34,7 +34,7 @@ const Opening = () => {
       <Container className="w-full">
         <div className="space-y-4">
           <h1 className="text-4xl font-black md:text-7xl">
-            STEP <span className="text-red-500">UP</span>
+            STEP <span className="text-red-600">UP</span>
             <br /> YOUR STYLE
           </h1>
           <h2 className="max-w-xl text-sm leading-6 opacity-80 md:text-base">

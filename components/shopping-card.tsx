@@ -53,7 +53,7 @@ const ShoppingCard = () => {
         </SheetHeader>
         {Number(cartCount) > 0 && (
           <section className="h-[300px] overflow-y-auto pb-6">
-            <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
+            <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
               {Object.values(cartDetails ?? {}).map((item, index) => (
                 <div key={index}>
                   <div className="relative flex items-center gap-4">
@@ -74,7 +74,7 @@ const ShoppingCard = () => {
                       <p className="my-2 text-sm text-slate-300">{`${item.description?.substring(0, 80)}...`}</p>
                       <h2 className="font-semibold">
                         {item.price.toPrecision(5)} {item.currency} |{" "}
-                        <span className="text-red-500">
+                        <span className="text-red-600">
                           Amount: {item.quantity}
                         </span>
                       </h2>
@@ -94,7 +94,7 @@ const ShoppingCard = () => {
                       />
                       <Minus
                         size={20}
-                        className="cursor-pointer duration-200 hover:text-red-400"
+                        className="cursor-pointer duration-200 hover:text-red-600"
                         onClick={() =>
                           decrementItem(item.id, item.amountOfProduct + 1)
                         }
