@@ -13,6 +13,9 @@ import FaqAccordion from "./faq-accordion";
 import Footer from "./footer";
 import ContactForm from "./contact-form";
 import GoogleMap from "./google-map";
+import HoodieTable from "./hoodie-table";
+import ShirtTable from "./shirt-table";
+import TrausersTable from "./trausers-table";
 
 export {
   Container,
@@ -30,4 +33,7 @@ export {
   Footer,
   ContactForm,
   GoogleMap,
+  HoodieTable,
+  ShirtTable,
+  TrausersTable,
 };
