@@ -3,12 +3,20 @@ import Link from "next/link";
 import { GraphQLClient } from "graphql-request";
 import Image from "next/image";
 
+interface Product {
+  id: string;
+  images: { url: string }[];
+  slug: string;
+  name: string;
+  price: number;
+}
+
 const hygraph = new GraphQLClient(
   process.env.NEXT_PUBLIC_HYGRAPH_API_KEY as string,
 );
 
 const Premieres = async () => {
-  const { products }: any = await hygraph.request(`
+  const { products }: { products: Product[] } = await hygraph.request(`
 		query MyQuery {
 			products(orderBy: publishedAt_ASC, first: 6) {
 				id
@@ -45,7 +53,7 @@ const Premieres = async () => {
               </Link>
             </div>
             <div className="grid h-[500px] grid-cols-2 gap-4 md:grid-cols-4">
-              {products.map(({ id, name, images, price, slug }: any) => (
+              {products.map(({ id, name, images, price, slug }: Product) => (
                 <div key={id} className="relative rounded-xl bg-white/5">
                   <Image
                     src={images[0].url}
@@ -58,7 +66,7 @@ const Premieres = async () => {
                     href={`/products/${slug}`}
                     className="absolute flex h-full w-full items-end rounded-xl bg-black/70 px-4 pb-2 duration-500 hover:opacity-0"
                   >
-                    <div className="text-xs lg:text-base">
+                    <div className="text-xs lg:text-sm">
                       <h3 className="font-semibold">{name}</h3>
                       <p className="opacity-80">Price: ${price}</p>
                     </div>
