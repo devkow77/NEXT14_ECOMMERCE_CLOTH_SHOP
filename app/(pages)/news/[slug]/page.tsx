@@ -58,13 +58,13 @@ const UniqueNews = async ({ params: { slug } }: Props) => {
     <main>
       <Container className="space-y-12 py-12">
         <section>
-          <h1 className="mb-4 max-w-md text-2xl font-black lg:text-3xl">
+          <h1 className="mb-1 max-w-lg text-2xl font-black lg:mb-2 lg:text-3xl">
             {news.title}
           </h1>
-          <p className="mb-4 font-semibold">
+          <p className="mb-4 text-sm font-semibold lg:text-base">
             Created at: {new Date(news.date).toLocaleDateString()} 📅
           </p>
-          <div className="relative mb-12 aspect-video max-h-[400px] rounded-xl bg-white/5">
+          <div className="relative mb-8 aspect-video max-h-[400px] rounded-xl bg-white/5">
             <Image
               src={news.image.url}
               alt={news.title}

@@ -14,27 +14,9 @@ import {
 } from "@/components/ui/form";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import axios from "axios";
-import { useToast } from "@/components/ui/use-toast";
-
-const formSchema = z.object({
-  email: z
-    .string()
-    .min(2, {
-      message: "Username must be at least 2 characters.",
-    })
-    .refine((email) => isValidEmail(email), {
-      message: "Invalid email address",
-    }),
-  message: z.string().min(20, {
-    message: "Username must be at least 20 characters.",
-  }),
-});
-
-const isValidEmail = (email: string) => {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-};
+import { sendMessage } from "@/app/actions";
+import { formSchema } from "@/lib/schema";
+import { useToast } from "./ui/use-toast";
 
 const ContactForm = () => {
   const { toast } = useToast();
@@ -47,32 +29,15 @@ const ContactForm = () => {
     },
   });
 
-  async function onSubmit(values: z.infer<typeof formSchema>) {
+  const onSubmit = async (data: any) => {
+    const formData = JSON.parse(JSON.stringify(data));
     try {
-      await axios.post(
-        "/api/contact",
-        {
-          email: values.email,
-          message: values.message,
-        },
-        {
-          headers: {
-            "Content-Type": "application/json",
-          },
-        },
-      );
-
-      toast({
-        title: "Success!",
-        description: "Your message has been sent successfully.",
-        variant: "successfull",
-      });
-
+      await sendMessage(formData);
       form.reset();
-    } catch (error) {
-      console.log(error);
+    } catch (err) {
+      console.log(err);
     }
-  }
+  };
 
   return (
     <Form {...form}>
