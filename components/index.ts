@@ -16,6 +16,7 @@ import GoogleMap from "./google-map";
 import HoodieTable from "./hoodie-table";
 import ShirtTable from "./shirt-table";
 import TrausersTable from "./trausers-table";
+import ProductsFilter from "./products-filter";
 
 export {
   Container,
@@ -36,4 +37,5 @@ export {
   HoodieTable,
   ShirtTable,
   TrausersTable,
+  ProductsFilter,
 };
