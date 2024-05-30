@@ -1,14 +1,10 @@
 import React from "react";
-import { FadeIn, Container } from "@/components/index";
+import { Container } from "@/components/index";
 import Link from "next/link";
 import { Instagram, Facebook, Twitter } from "lucide-react";
+import { Link as LinkType } from "@/lib/interface";
 
-interface Link {
-  name: string;
-  href: string;
-}
-
-const links: Link[] = [
+const links: LinkType[] = [
   {
     name: "Products",
     href: "/products",
@@ -65,7 +61,7 @@ const Footer = () => {
           <div className="lg:mx-auto">
             <h2 className="mb-2 text-lg font-bold lg:text-xl">Links</h2>
             <ul className="flex flex-col gap-2 text-sm lg:text-base">
-              {links.map(({ name, href }: Link, index: number) => (
+              {links.map(({ name, href }: LinkType, index: number) => (
                 <Link
                   href={href}
                   key={index}

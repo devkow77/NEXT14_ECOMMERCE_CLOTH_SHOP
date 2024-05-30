@@ -3,22 +3,45 @@
 import Link from "next/link";
 import React from "react";
 import { motion } from "framer-motion";
+import { Link as LinkType } from "@/lib/interface";
 
-interface Link {
-  name: string;
-  href: string;
-}
-
-const links: Link[] = [
-  { name: "Home", href: "/" },
-  { name: "Products", href: "/products" },
-  { name: "Men", href: "/men" },
-  { name: "Women", href: "/women" },
-  { name: "Kids", href: "/kids" },
-  { name: "Sizes", href: "/sizes" },
-  { name: "News", href: "/news" },
-  { name: "Faq", href: "/faq" },
-  { name: "Contact", href: "/contact" },
+const links: LinkType[] = [
+  {
+    name: "Products",
+    href: "/products",
+  },
+  {
+    name: "Men",
+    href: "/products/men",
+  },
+  {
+    name: "Women",
+    href: "/products/women",
+  },
+  {
+    name: "Kids",
+    href: "/products/kids",
+  },
+  {
+    name: "Premieres",
+    href: "/premieres",
+  },
+  {
+    name: "Sizes",
+    href: "/sizes",
+  },
+  {
+    name: "News",
+    href: "/news",
+  },
+  {
+    name: "Faq",
+    href: "/faq",
+  },
+  {
+    name: "Contact",
+    href: "/contact",
+  },
 ];
 
 const menuMotion = {
@@ -54,7 +77,7 @@ const MobileMenu = () => {
       animate="visible"
     >
       <div className="flex flex-col gap-6 font-semibold">
-        {links.map(({ name, href }: Link, index: number) => (
+        {links.map(({ name, href }: LinkType, index: number) => (
           <Link
             href={href}
             key={index}

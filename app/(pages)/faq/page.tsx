@@ -3,7 +3,7 @@ import { FaqAccordion, Container } from "@/components/index";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 
-const Faq = () => {
+const Faq = async () => {
   return (
     <main>
       <Container className="py-12">

@@ -33,39 +33,39 @@ const DesktopMenu = () => {
                 <NavigationMenuLink asChild className="dark:hover:bg-white/5">
                   <a
                     className="from-muted/50 to-muted flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md"
-                    href="/"
+                    href="/products"
                   >
                     <div className="mb-2 mt-4 text-lg font-medium">
-                      shadcn/ui
+                      All products
                     </div>
-                    <p className="text-muted-foreground text-sm leading-tight">
-                      Beautifully designed components that you can copy and
-                      paste into your apps. Accessible. Customizable. Open
-                      Source.
+                    <p className="text-muted-foreground text-sm leading-5">
+                      Explore our wide range of offerings in the All Products
+                      section, where you'll find everything from the latest tech
+                      gadgets to everyday essentials.
                     </p>
                   </a>
                 </NavigationMenuLink>
               </li>
               <ListItem
-                href="/docs"
-                title="Introduction"
+                href="/products/men"
+                title="Men Products"
                 className="dark:hover:bg-white/5"
               >
-                Re-usable components built using Radix UI and Tailwind CSS.
+                Browse our Men’s Products section for the latest in fashion.
               </ListItem>
               <ListItem
-                href="/docs/installation"
-                title="Installation"
+                href="/products/women"
+                title="Women Products"
                 className="dark:hover:bg-white/5"
               >
-                How to install dependencies and structure your app.
+                Browse our Women’s Products section for the latest in fashion.
               </ListItem>
               <ListItem
-                href="/docs/primitives/typography"
-                title="Typography"
+                href="/products/kids"
+                title="Kids Products"
                 className="dark:hover:bg-white/5"
               >
-                Styles for headings, paragraphs, lists...etc
+                Browse our Kids Products section for the latest in fashion.
               </ListItem>
             </ul>
           </NavigationMenuContent>

@@ -16,11 +16,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { sendMessage } from "@/app/actions";
 import { formSchema } from "@/lib/schema";
-import { useToast } from "./ui/use-toast";
 
 const ContactForm = () => {
-  const { toast } = useToast();
-
   const form = useForm<z.infer<typeof formSchema>>({
     resolver: zodResolver(formSchema),
     defaultValues: {

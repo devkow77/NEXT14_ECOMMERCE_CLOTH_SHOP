@@ -3,7 +3,7 @@ import { ContactForm, GoogleMap, Container } from "@/components/index";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 
-const Contact = () => {
+const Contact = async () => {
   return (
     <article>
       <Container className="py-12">

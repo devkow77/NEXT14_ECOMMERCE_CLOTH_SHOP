@@ -3,10 +3,8 @@ import {
   Html,
   Head,
   Font,
-  Container,
   Button,
   Text,
-  Img,
 } from "@react-email/components";
 import * as React from "react";
 
