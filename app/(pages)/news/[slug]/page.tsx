@@ -27,32 +27,37 @@ const hygraph = new GraphQLClient(
 );
 
 const UniqueNews = async ({ params: { slug } }: Props) => {
-  const { news, newsAll }: { news: News; newsAll: News[] } =
-    await hygraph.request(`
-       query MyQuery {
-            news(where: {slug: "${slug}"}) {
-                slug
-                image {
-                url
-                }
-                title
-                content {
-                html
-                }
-                date
-            }
-            newsAll(
-                where: {slug_not: "${slug}"}
-            ) {
-                slug
-                image {
-                url
-                }
-                title
-                date
-            }
+  const query = `
+    query MyQuery {
+      news(
+        where: {slug: "${slug}"}
+      )
+      {
+        slug
+        image {
+          url
         }
-    `);
+        title
+        content {
+          html
+        }
+        date
+      }
+      newsAll(
+        where: {slug_not: "${slug}"}
+      )
+      {
+        slug
+        image {
+          url
+        }
+        title
+        date
+      }
+    }
+  `;
+  const { news, newsAll }: { news: News; newsAll: News[] } =
+    await hygraph.request(query);
 
   return (
     <main>

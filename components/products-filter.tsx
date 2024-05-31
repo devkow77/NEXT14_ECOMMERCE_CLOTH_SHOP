@@ -4,6 +4,10 @@ import React, { useState } from "react";
 import { useRouter, usePathname, useSearchParams } from "next/navigation";
 import { Filter } from "@/lib/interface";
 
+type Props = {
+  hasGender?: boolean;
+};
+
 interface SelectedFilters {
   gender?: string;
   type?: string;
@@ -71,7 +75,7 @@ const price: Filter[] = [
   },
 ];
 
-const ProductsFilter = () => {
+const ProductsFilter = ({ hasGender = true }: Props) => {
   const router = useRouter();
   const pathname = usePathname();
   const query = useSearchParams();
@@ -90,20 +94,23 @@ const ProductsFilter = () => {
 
   return (
     <section className="mb-12 space-y-6 text-sm md:flex md:items-end md:gap-8 lg:text-base">
-      <div>
-        <h3 className="mb-2 font-semibold">Gender</h3>
-        <div className="flex flex-wrap items-center gap-2">
-          {gender.map(({ name, value }, index: number) => (
-            <div
-              onClick={() => updateFilter("gender", value)}
-              key={index}
-              className={`${selectedFilters.gender === value && "font-semibold text-red-600"} cursor-pointer`}
-            >
-              {name}
-            </div>
-          ))}
+      {hasGender && (
+        <div>
+          <h3 className="mb-2 font-semibold">Gender</h3>
+
+          <div className="flex flex-wrap items-center gap-2">
+            {gender.map(({ name, value }, index: number) => (
+              <div
+                onClick={() => updateFilter("gender", value)}
+                key={index}
+                className={`${selectedFilters.gender === value && "font-semibold text-red-600"} cursor-pointer`}
+              >
+                {name}
+              </div>
+            ))}
+          </div>
         </div>
-      </div>
+      )}
       <div>
         <h3 className="mb-2 font-semibold">Products</h3>
         <div className="flex flex-wrap items-center gap-2">

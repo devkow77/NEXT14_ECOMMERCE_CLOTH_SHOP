@@ -17,6 +17,8 @@ import HoodieTable from "./hoodie-table";
 import ShirtTable from "./shirt-table";
 import TrausersTable from "./trausers-table";
 import ProductsFilter from "./products-filter";
+import NotFoundProducts from "./not-found-products";
+import ProductCard from "./product-card";
 
 export {
   Container,
@@ -38,4 +40,6 @@ export {
   ShirtTable,
   TrausersTable,
   ProductsFilter,
+  NotFoundProducts,
+  ProductCard,
 };

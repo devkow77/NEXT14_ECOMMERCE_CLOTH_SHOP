@@ -21,12 +21,12 @@ interface News {
 }
 
 const News = async () => {
-  const { newsAll }: { newsAll: News[] } = await hygraph.request(`
-      query MyQuery {
+  const query = `
+    query MyQuery {
 			newsAll {
 				slug
 				image {
-				url
+				  url
 				}
 				title
 				content {
@@ -35,7 +35,9 @@ const News = async () => {
 				date
 			}
 		}
-`);
+  `;
+
+  const { newsAll }: { newsAll: News[] } = await hygraph.request(query);
 
   return (
     <main>

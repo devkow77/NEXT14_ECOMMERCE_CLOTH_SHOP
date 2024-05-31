@@ -17,7 +17,7 @@ export default function RootLayoutTwo({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} text-white`}>
+      <body className={`${montserrat.className} dark:text-white`}>
         <Providers>
           <Navbar />
           {children}

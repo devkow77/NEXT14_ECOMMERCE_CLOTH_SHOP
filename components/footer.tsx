@@ -45,7 +45,7 @@ const links: LinkType[] = [
 
 const Footer = () => {
   return (
-    <footer className="relative z-20 bg-zinc-900 py-12">
+    <footer className="relative z-20 bg-zinc-900 py-12 text-white">
       <Container>
         <section className="grid grid-cols-1 gap-6 lg:grid-cols-3">
           <div>
