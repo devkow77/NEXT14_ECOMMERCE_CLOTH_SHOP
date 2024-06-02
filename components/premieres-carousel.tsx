@@ -13,7 +13,7 @@ const PremieresCarousel = () => {
       opts={{
         align: "start",
       }}
-      className="w-full"
+      className=" w-full overflow-hidden"
     >
       <CarouselContent>
         {Array.from({ length: 5 }).map((_, index) => (

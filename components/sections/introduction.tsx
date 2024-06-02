@@ -19,7 +19,7 @@ const Introduction = () => {
   );
   return (
     <motion.article
-      className="relative h-[120vh]"
+      className="relative z-20 h-[120vh]"
       ref={introductionRef}
       style={{ opacity }}
     >

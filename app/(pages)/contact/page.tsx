@@ -5,7 +5,7 @@ import Link from "next/link";
 
 const Contact = async () => {
   return (
-    <article className="bg-zinc-200 dark:bg-transparent">
+    <article>
       <Container className="py-12">
         <h2 className="text-2xl font-black md:text-3xl xl:text-4xl">
           CONTACT <br /> <span className="text-red-600">FORM</span>

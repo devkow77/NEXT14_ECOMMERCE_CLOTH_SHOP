@@ -30,7 +30,10 @@ const DesktopMenu = () => {
           <NavigationMenuContent>
             <ul className="grid gap-3 p-6 md:w-[400px] lg:w-[500px] lg:grid-cols-[.75fr_1fr]">
               <li className="row-span-3">
-                <NavigationMenuLink asChild className="dark:hover:bg-white/5">
+                <NavigationMenuLink
+                  asChild
+                  className="hover:bg-black/5 dark:hover:bg-white/5"
+                >
                   <a
                     className="from-muted/50 to-muted flex h-full w-full select-none flex-col justify-end rounded-md p-6 no-underline outline-none focus:shadow-md"
                     href="/products"
@@ -47,23 +50,23 @@ const DesktopMenu = () => {
                 </NavigationMenuLink>
               </li>
               <ListItem
-                href="/products/men"
+                href="/products/gender/men"
                 title="Men Products"
-                className="dark:hover:bg-white/5"
+                className="hover:bg-black/5 dark:hover:bg-white/5"
               >
                 Browse our Men’s Products section for the latest in fashion.
               </ListItem>
               <ListItem
-                href="/products/women"
+                href="/products/gender/women"
                 title="Women Products"
-                className="dark:hover:bg-white/5"
+                className="hover:bg-black/5 dark:hover:bg-white/5"
               >
                 Browse our Women’s Products section for the latest in fashion.
               </ListItem>
               <ListItem
-                href="/products/kids"
+                href="/products/gender/kids"
                 title="Kids Products"
-                className="dark:hover:bg-white/5"
+                className="hover:bg-black/5 dark:hover:bg-white/5"
               >
                 Browse our Kids Products section for the latest in fashion.
               </ListItem>

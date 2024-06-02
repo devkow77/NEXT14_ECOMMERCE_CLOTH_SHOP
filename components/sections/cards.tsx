@@ -55,7 +55,7 @@ const Cards = () => {
                 height={500}
                 className="absolute h-full w-full rounded-2xl object-cover object-center"
               />
-              <Link href="/products/men">
+              <Link href="/products/gender/men">
                 <div className="absolute flex h-full w-full items-center justify-center rounded-xl bg-black/30 font-bold duration-300 hover:opacity-0 md:text-xl lg:text-3xl">
                   MEN
                 </div>
@@ -72,7 +72,7 @@ const Cards = () => {
                 height={500}
                 className="absolute h-full w-full rounded-xl object-cover object-center"
               />
-              <Link href="/products/women">
+              <Link href="/products/gender/women">
                 <div className="absolute flex h-full w-full items-center justify-center rounded-xl bg-black/50 font-bold duration-300 hover:opacity-0 md:text-xl lg:text-3xl">
                   WOMEN
                 </div>
@@ -89,7 +89,7 @@ const Cards = () => {
                 height={500}
                 className="absolute h-full w-full rounded-xl object-cover object-center"
               />
-              <Link href="/products/kids">
+              <Link href="/products/gender/kids">
                 <div className="absolute flex h-full w-full items-center justify-center rounded-xl bg-black/70 font-bold duration-300 hover:opacity-0 md:text-xl lg:text-3xl">
                   KIDS
                 </div>

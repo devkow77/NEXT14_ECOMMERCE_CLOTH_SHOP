@@ -19,6 +19,10 @@ import TrausersTable from "./trausers-table";
 import ProductsFilter from "./products-filter";
 import NotFoundProducts from "./not-found-products";
 import ProductCard from "./product-card";
+import ProductSize from "./product-size";
+import ProductQuantity from "./product-quantity";
+import ProductGuarantees from "./product-guarantees";
+import ProductCheckout from "./product-checkout";
 
 export {
   Container,
@@ -42,4 +46,8 @@ export {
   ProductsFilter,
   NotFoundProducts,
   ProductCard,
+  ProductSize,
+  ProductQuantity,
+  ProductGuarantees,
+  ProductCheckout,
 };
