@@ -1,5 +1,6 @@
-import * as React from "react";
+"use client";
 
+import React from "react";
 import {
   Select,
   SelectContent,
@@ -9,22 +10,36 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { useDispatch, useSelector } from "react-redux";
+import { setSize, setStripeApi } from "@/redux/slice";
 
 type Props = {
-  sizes: string[];
+  sizes: {
+    name: string;
+    stripeApi: string;
+  }[];
 };
 
 const ProductSize = ({ sizes }: Props) => {
+  const dispatch = useDispatch();
+
+  const handleSetSize = (value: string) => {
+    dispatch(setSize(value.split("-")[0]));
+    dispatch(setStripeApi(value.split("-")[1]));
+  };
+
   return (
-    <Select>
+    <Select onValueChange={handleSetSize}>
       <SelectTrigger className="w-[180px]">
         <SelectValue placeholder="No selected" />
       </SelectTrigger>
       <SelectContent>
         <SelectGroup>
           <SelectLabel>No selected</SelectLabel>
-          {sizes.map((size) => (
-            <SelectItem value={size}>{size.toUpperCase()}</SelectItem>
+          {sizes.map((size, index: number) => (
+            <SelectItem key={index} value={`${size.name}-${size.stripeApi}`}>
+              {size.name.toUpperCase()}
+            </SelectItem>
           ))}
         </SelectGroup>
       </SelectContent>

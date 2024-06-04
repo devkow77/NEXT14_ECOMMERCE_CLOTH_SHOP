@@ -6,7 +6,7 @@ import ShoppingBag from "./shopping-bag";
 import DesktopMenu from "./desktop-menu";
 import ShoppingCard from "./shopping-card";
 import MobileMenu from "./mobile-menu";
-import PremieresCarousel from "./premieres-carousel";
+import SimiliarProductsCarousel from "./similiar-products-carousel";
 import FadeIn from "./fade-in";
 import HamburgerBtn from "./hamburger-btn";
 import FaqAccordion from "./faq-accordion";
@@ -23,6 +23,7 @@ import ProductSize from "./product-size";
 import ProductQuantity from "./product-quantity";
 import ProductGuarantees from "./product-guarantees";
 import ProductCheckout from "./product-checkout";
+import ProductGallery from "./product-gallery";
 
 export {
   Container,
@@ -33,7 +34,7 @@ export {
   DesktopMenu,
   ShoppingCard,
   MobileMenu,
-  PremieresCarousel,
+  SimiliarProductsCarousel,
   FadeIn,
   HamburgerBtn,
   FaqAccordion,
@@ -50,4 +51,5 @@ export {
   ProductQuantity,
   ProductGuarantees,
   ProductCheckout,
+  ProductGallery,
 };

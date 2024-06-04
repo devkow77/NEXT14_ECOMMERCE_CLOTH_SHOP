@@ -45,7 +45,7 @@ const Cards = () => {
           </p>
           <div className="grid h-[460px] w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
             <motion.div
-              className="relative rounded-xl bg-white/5"
+              className="relative z-50 rounded-xl bg-white/5"
               style={{ opacity: menOpacity }}
             >
               <Image

@@ -21,6 +21,9 @@ const Premieres = async () => {
 				price
 				slug
 				name
+        productType {
+          name
+        }
 			}
 		}
   `;

@@ -51,8 +51,6 @@ const Products = async ({ searchParams }: Props) => {
   `;
   const { products }: { products: Product[] } = await hygraph.request(query);
 
-  await new Promise((resolve) => setTimeout(resolve, 2000));
-
   return (
     <main>
       <Container className="py-12">

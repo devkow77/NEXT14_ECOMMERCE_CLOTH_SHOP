@@ -92,7 +92,7 @@ const Footer = () => {
         </section>
         <section>
           <div className="my-4 h-[2px] w-full bg-white/5" />
-          <p className="text-sm">
+          <p className="text-center text-sm leading-6 lg:text-base lg:leading-8">
             Website created by{" "}
             <Link
               href="https://github.com/devkow77"

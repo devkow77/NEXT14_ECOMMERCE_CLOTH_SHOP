@@ -4,6 +4,8 @@ import * as React from "react";
 import { ThemeProvider as NextThemesProvider } from "next-themes";
 import { type ThemeProviderProps } from "next-themes/dist/types";
 import { CartProvider } from "use-shopping-cart";
+import { Provider } from "react-redux";
+import store from "@/redux/store";
 
 const Providers = ({ children, ...props }: ThemeProviderProps) => {
   return (
@@ -20,11 +22,11 @@ const Providers = ({ children, ...props }: ThemeProviderProps) => {
         stripe={process.env.NEXT_PUBLIC_STRIPE_API_KEY as string}
         successUrl="http://localhost:3000/success"
         cancelUrl="http://localhost:3000/cancel"
-        currency="EUR"
+        currency="USD"
         billingAddressCollection={true}
         shouldPersist={true}
       >
-        {children}
+        <Provider store={store}>{children}</Provider>
       </CartProvider>
     </NextThemesProvider>
   );

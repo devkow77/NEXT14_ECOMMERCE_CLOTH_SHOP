@@ -10,8 +10,9 @@ import {
 import { useShoppingCart } from "use-shopping-cart";
 import Image from "next/image";
 import Link from "next/link";
-import { Minus, Plus, Trash } from "lucide-react";
+import { Minus, Plus, Trash, ShoppingBasket } from "lucide-react";
 import { Button } from "./ui/button";
+// import { useEffect } from "react";
 
 const ShoppingCard = () => {
   const {
@@ -19,13 +20,16 @@ const ShoppingCard = () => {
     handleCartClick,
     cartCount,
     cartDetails,
-    decrementItem,
-    incrementItem,
+    totalPrice,
     removeItem,
     redirectToCheckout,
-    totalPrice,
+    incrementItem,
     clearCart,
   } = useShoppingCart();
+
+  // useEffect(() => {
+  //   console.log(cartDetails);
+  // }, [cartDetails]);
 
   const handleCheckoutClick = async (event: any) => {
     event.preventDefault();
@@ -48,9 +52,25 @@ const ShoppingCard = () => {
         <SheetHeader className="mb-6">
           <SheetTitle>Shopping Cart</SheetTitle>
           <SheetDescription>
-            Currently you have {cartCount} items in cart.
+            You have {cartCount} items in the cart
           </SheetDescription>
         </SheetHeader>
+        {!cartCount && (
+          <div>
+            <section className="relative" />
+            <section className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2">
+              <div className="flex min-w-[260px] flex-col items-center">
+                <ShoppingBasket size={40} className="md:scale-125" />
+                <h1 className="mb-2 mt-4 text-center text-lg font-extrabold">
+                  Your cart is empty! 😢
+                </h1>
+                <p className="text-center text-sm text-slate-300">
+                  Looks like you have not added anything to your cart yet
+                </p>
+              </div>
+            </section>
+          </div>
+        )}
         {Number(cartCount) > 0 && (
           <section className="h-[300px] overflow-y-auto pb-6">
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -71,11 +91,11 @@ const ShoppingCard = () => {
                     </Link>
                     <div className="pr-8 text-sm">
                       <h2 className="font-bold">{item.name}</h2>
-                      <p className="my-2 text-sm text-slate-300">{`${item.description?.substring(0, 80)}...`}</p>
+                      <p className="my-2 text-sm text-slate-300">{`${item.description?.substring(0, 50)}...`}</p>
                       <h2 className="font-semibold">
                         {item.price.toPrecision(5)} {item.currency} |{" "}
                         <span className="text-red-600">
-                          Amount: {item.quantity}
+                          Quantity: {item.quantity}
                         </span>
                       </h2>
                     </div>
@@ -88,16 +108,12 @@ const ShoppingCard = () => {
                       <Plus
                         size={20}
                         className="cursor-pointer duration-200 hover:text-green-400"
-                        onClick={() =>
-                          incrementItem(item.id, item.amountOfProduct + 1)
-                        }
+                        onClick={() => incrementItem(item.id, { count: 1 })}
                       />
                       <Minus
                         size={20}
                         className="cursor-pointer duration-200 hover:text-red-600"
-                        onClick={() =>
-                          decrementItem(item.id, item.amountOfProduct + 1)
-                        }
+                        onClick={() => incrementItem(item.id, { count: -1 })}
                       />
                     </div>
                   </div>
@@ -112,7 +128,7 @@ const ShoppingCard = () => {
             <span className="font-semibold">{cartCount}</span> <br />
             Total price:{" "}
             <span className="font-semibold">
-              {totalPrice !== 0 ? Number(totalPrice).toPrecision(5) : 0} PLN
+              {totalPrice !== 0 ? Number(totalPrice).toPrecision(5) : 0} USD
             </span>
           </h2>
           <div className="mt-6 flex items-center gap-4">

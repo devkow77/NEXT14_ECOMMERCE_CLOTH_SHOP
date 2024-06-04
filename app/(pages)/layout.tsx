@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Montserrat } from "next/font/google";
 import "@/app/globals.css";
 import { Navbar, Providers, ShoppingCard, Footer } from "@/components/index";
+import { Toaster } from "@/components/ui/toaster";
 
 const montserrat = Montserrat({ subsets: ["latin"] });
 
@@ -24,6 +25,7 @@ export default function RootLayoutTwo({
           <Navbar />
           {children}
           <ShoppingCard />
+          <Toaster />
           <Footer />
         </Providers>
       </body>
