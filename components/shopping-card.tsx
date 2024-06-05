@@ -12,7 +12,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { Minus, Plus, Trash, ShoppingBasket } from "lucide-react";
 import { Button } from "./ui/button";
-// import { useEffect } from "react";
 
 const ShoppingCard = () => {
   const {
@@ -26,10 +25,6 @@ const ShoppingCard = () => {
     incrementItem,
     clearCart,
   } = useShoppingCart();
-
-  // useEffect(() => {
-  //   console.log(cartDetails);
-  // }, [cartDetails]);
 
   const handleCheckoutClick = async (event: any) => {
     event.preventDefault();
@@ -91,7 +86,7 @@ const ShoppingCard = () => {
                     </Link>
                     <div className="pr-8 text-sm">
                       <h2 className="font-bold">{item.name}</h2>
-                      <p className="my-2 text-sm text-slate-300">{`${item.description?.substring(0, 50)}...`}</p>
+                      <p className="my-2 text-sm text-slate-100 dark:text-slate-300">{`${item.description?.substring(0, 50)}...`}</p>
                       <h2 className="font-semibold">
                         {item.price.toPrecision(5)} {item.currency} |{" "}
                         <span className="text-red-600">

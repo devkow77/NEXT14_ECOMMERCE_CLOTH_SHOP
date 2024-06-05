@@ -40,6 +40,10 @@ const GenderProducts = async ({ params: { slug }, searchParams }: Props) => {
               images {
                   url
               }
+              productType{
+                name
+                value
+              }
           }
       }
     `;

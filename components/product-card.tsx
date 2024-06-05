@@ -21,7 +21,7 @@ const ProductCard = ({
           height={400}
           className="absolute h-full w-full rounded-xl object-cover object-center"
         />
-        <div className="absolute h-full w-full rounded-xl bg-black/40 duration-300 hover:bg-black/0" />
+        <div className="absolute h-full w-full rounded-xl bg-black/20 duration-300 hover:bg-black/0 dark:bg-black/40 dark:hover:bg-black/0" />
       </Link>
       <div className="text-xs leading-5 md:text-sm">
         <h3 className="font-semibold">{name}</h3>

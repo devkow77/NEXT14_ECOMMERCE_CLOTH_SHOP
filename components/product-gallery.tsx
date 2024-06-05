@@ -17,20 +17,20 @@ const ProductGallery = ({ images, name }: Props) => {
 
   return (
     <section className="max-w-sm">
-      <div className="relative mb-3 aspect-square rounded-xl bg-white/5">
+      <div className="relative mb-3 aspect-square cursor-pointer overflow-hidden rounded-xl bg-white/5">
         <Image
           src={activeImage}
           alt={name}
           width={500}
           height={500}
-          className="absolute h-full w-full rounded-xl object-cover object-center"
+          className="absolute h-full w-full rounded-xl object-cover object-center duration-300 hover:scale-125"
         />
       </div>
       <div className="grid grid-cols-4 gap-3">
         {images.map((image: Image, index: number) => (
           <div
             onClick={() => setActiveImage(image.url)}
-            className="relative aspect-square cursor-pointer rounded-xl bg-white/10"
+            className="relative block aspect-square cursor-pointer rounded-xl bg-white/10"
             key={index}
           >
             <Image

@@ -14,17 +14,16 @@ const buttonVariants = cva(
         destructive:
           "bg-red-500 text-slate-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-slate-50 dark:hover:bg-red-900/90",
         outline:
-          "border border-slate-200 bg-transparent hover:bg-black/5 hover:text-slate-900 dark:border-none dark:bg-transparent dark:hover:bg-white/5 dark:hover:text-slate-50 outline:none",
+          "border border-slate-200 bg-transparent hover:bg-black/5 hover:text-slate-900 border-none dark:bg-transparent dark:hover:bg-white/5 dark:hover:text-slate-50 outline:none",
         secondary:
           "bg-slate-100 text-slate-900 hover:bg-slate-100/80 dark:bg-slate-800 dark:text-slate-50 dark:hover:bg-slate-800/80",
         ghost:
           "hover:bg-slate-100 hover:text-slate-900 dark:hover:bg-slate-800 dark:hover:text-slate-50",
         link: "text-slate-900 underline-offset-4 hover:underline dark:text-slate-50",
-        buy: "dark:bg-green-500 dark:hover:bg-green-700 duration-200 text-white",
-        addToCart:
-          "dark:bg-blue-500 dark:hover:bg-blue-700 duration-200 text-white",
+        buy: "bg-green-500 hover:bg-green-700 duration-200 text-white",
+        addToCart: "bg-blue-500 hover:bg-blue-700 duration-200 text-white",
         deleteProduct:
-          "dark:bg-red-600 dark:hover:bg-red-800 duration-200 text-white ",
+          "bg-red-600 dark:hover:bg-red-800 duration-200 text-white ",
       },
       size: {
         default: "h-10 px-4 py-2",

@@ -17,7 +17,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montserrat.className} text-white`}>
+      <body className={`${montserrat.className} bg-black text-white`}>
         <Providers>
           {children}
           <ShoppingCard />

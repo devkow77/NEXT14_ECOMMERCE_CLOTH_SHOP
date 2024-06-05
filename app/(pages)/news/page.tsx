@@ -62,7 +62,7 @@ const News = async () => {
                   width={400}
                   height={400}
                 />
-                <div className="absolute h-full w-full rounded-xl bg-black/70 duration-300 hover:opacity-0">
+                <div className="absolute h-full w-full rounded-xl bg-black/50 duration-300 hover:opacity-0 ">
                   <div className="absolute bottom-3 left-4 text-xs lg:text-sm">
                     <h3 className="font-semibold">{news.title}</h3>
                     <p className="opacity-80">

@@ -23,6 +23,7 @@ const Premieres = async () => {
 				name
         productType {
           name
+          value
         }
 			}
 		}

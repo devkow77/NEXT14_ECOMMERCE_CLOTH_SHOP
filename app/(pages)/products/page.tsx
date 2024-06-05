@@ -50,6 +50,7 @@ const Products = async ({ searchParams }: Props) => {
     }
   `;
   const { products }: { products: Product[] } = await hygraph.request(query);
+  console.log(products);
 
   return (
     <main>
