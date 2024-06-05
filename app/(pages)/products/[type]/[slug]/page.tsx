@@ -37,6 +37,7 @@ const UniqueProduct = async ({ params: { type, slug } }: any) => {
           url
         }
         introduction
+        care
         productGender {
           name
         }
@@ -72,8 +73,6 @@ const UniqueProduct = async ({ params: { type, slug } }: any) => {
 
   const { product, products: similiarProducts }: any =
     await hygraph.request(query);
-
-  await new Promise((resolve) => setTimeout(resolve, 2000));
 
   return (
     <main>
@@ -115,7 +114,7 @@ const UniqueProduct = async ({ params: { type, slug } }: any) => {
             How to care
           </h3>
           <p className="mb-4 text-sm leading-6 opacity-80 lg:text-base lg:leading-8">
-            {product.introduction}
+            {product.care}
           </p>
         </section>
         <ProductCheckout product={product} />

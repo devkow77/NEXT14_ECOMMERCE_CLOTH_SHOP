@@ -22,7 +22,7 @@ const Premieres = async () => {
 	`);
 
   return (
-    <article className="relative z-20 h-[130vh] bg-zinc-950">
+    <article className="relative z-20 h-[140vh] bg-zinc-950">
       <FadeIn className="absolute top-1/2 w-full -translate-y-1/2">
         <Container className="space-y-12">
           <section>
