@@ -1,15 +1,7 @@
-import { Container, FadeIn } from "@/components/index";
+import { Container, FadeIn, ProductCard } from "@/components/index";
 import Link from "next/link";
 import { GraphQLClient } from "graphql-request";
-import Image from "next/image";
-
-interface Product {
-  id: string;
-  images: { url: string }[];
-  slug: string;
-  name: string;
-  price: number;
-}
+import { Product } from "@/lib/interface";
 
 const hygraph = new GraphQLClient(
   process.env.NEXT_PUBLIC_HYGRAPH_API_KEY as string,
@@ -19,7 +11,6 @@ const Premieres = async () => {
   const { products }: { products: Product[] } = await hygraph.request(`
 		query MyQuery {
 			products(orderBy: publishedAt_ASC, first: 6) {
-				id
 				images {
 				  url
 				}
@@ -31,7 +22,7 @@ const Premieres = async () => {
 	`);
 
   return (
-    <article className="relative z-20 h-[110vh] bg-zinc-950">
+    <article className="relative z-20 h-[130vh] bg-zinc-950">
       <FadeIn className="absolute top-1/2 w-full -translate-y-1/2">
         <Container className="space-y-12">
           <section>
@@ -52,26 +43,9 @@ const Premieres = async () => {
                 View all products
               </Link>
             </div>
-            <div className="grid h-[500px] grid-cols-2 gap-4 md:grid-cols-4">
-              {products.map(({ id, name, images, price, slug }: Product) => (
-                <div key={id} className="relative rounded-xl bg-white/5">
-                  <Image
-                    src={images[0].url}
-                    alt={name}
-                    width={500}
-                    height={500}
-                    className="absolute h-full w-full rounded-xl object-cover object-center"
-                  />
-                  <Link
-                    href={`/products/${slug}`}
-                    className="absolute flex h-full w-full items-end rounded-xl bg-black/70 px-4 pb-2 duration-500 hover:opacity-0"
-                  >
-                    <div className="text-xs lg:text-sm">
-                      <h3 className="font-semibold">{name}</h3>
-                      <p className="opacity-80">Price: ${price}</p>
-                    </div>
-                  </Link>
-                </div>
+            <div className="grid h-[700px] grid-cols-2 gap-4 md:grid-cols-4">
+              {products.map((product: Product) => (
+                <ProductCard product={product} />
               ))}
             </div>
           </section>
