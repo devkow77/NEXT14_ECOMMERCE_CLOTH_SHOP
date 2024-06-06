@@ -20,14 +20,19 @@ const hygraph = new GraphQLClient(
   process.env.NEXT_PUBLIC_HYGRAPH_API_KEY as string,
 );
 
+function capitalizeFirstLetter(value: string) {
+  return value.charAt(0).toUpperCase() + value.slice(1);
+}
+
 const Products = async ({ searchParams }: Props) => {
   const query = `
     query MyQuery {
       products(
+        first: 500,
         orderBy: ${searchParams.price ? searchParams.price : "publishedAt_DESC"},
         where: {
           productType: {_search: "${searchParams.type ? searchParams.type : ""}"},
-          productGender: {_search: "${searchParams.gender ? searchParams.gender : ""}"}
+          ${searchParams.gender ? `productGender: { name: "${capitalizeFirstLetter(searchParams.gender)}" }` : ""}
         }
       )
       {

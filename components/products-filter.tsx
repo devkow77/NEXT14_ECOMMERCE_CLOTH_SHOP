@@ -51,16 +51,12 @@ const products: Filter[] = [
     value: "t-shirt",
   },
   {
+    name: "Trausers",
+    value: "trausers",
+  },
+  {
     name: "Jacket",
     value: "jacket",
-  },
-  {
-    name: "Pants",
-    value: "pants",
-  },
-  {
-    name: "Shoes",
-    value: "shoes",
   },
 ];
 

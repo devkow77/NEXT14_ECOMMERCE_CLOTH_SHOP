@@ -10,7 +10,7 @@ interface Props {
 }
 
 export const sendMessage = async (data: Props) => {
-  const user = process.env.NEXT_PUBLIC_USER_EMAIL as string;
+  const user = process.env.NEXT_USER_EMAIL as string;
 
   const transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -18,7 +18,7 @@ export const sendMessage = async (data: Props) => {
     secure: true,
     auth: {
       user,
-      pass: process.env.NEXT_PUBLIC_USER_PASSWORD as string,
+      pass: process.env.NEXT_USER_PASSWORD as string,
     },
   });
 

@@ -11,15 +11,15 @@ const links: LinkType[] = [
   },
   {
     name: "Men",
-    href: "/products/men",
+    href: "/products/gender/men",
   },
   {
     name: "Women",
-    href: "/products/women",
+    href: "/products/gender/women",
   },
   {
     name: "Kids",
-    href: "/products/kids",
+    href: "/products/gender/kids",
   },
   {
     name: "Premieres",

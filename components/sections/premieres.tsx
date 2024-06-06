@@ -10,7 +10,7 @@ const hygraph = new GraphQLClient(
 const Premieres = async () => {
   const { products }: { products: Product[] } = await hygraph.request(`
 		query MyQuery {
-			products(orderBy: publishedAt_ASC, first: 6) {
+			products(first: 6) {
 				images {
 				  url
 				}

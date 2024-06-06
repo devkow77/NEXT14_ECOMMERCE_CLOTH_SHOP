@@ -23,7 +23,7 @@ interface News {
 const News = async () => {
   const query = `
     query MyQuery {
-			newsAll {
+			newsAll(first: 50) {
 				slug
 				image {
 				  url

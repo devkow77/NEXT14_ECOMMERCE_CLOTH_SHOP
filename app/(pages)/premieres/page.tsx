@@ -11,7 +11,7 @@ const Premieres = async () => {
   const query = `
     query MyQuery {
 			products(
-        orderBy: publishedAt_ASC
+        first: 12
       )
       {
 				id

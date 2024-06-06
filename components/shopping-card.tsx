@@ -74,7 +74,7 @@ const ShoppingCard = () => {
                   <div className="relative flex items-center gap-4">
                     <Link
                       href={`/products/${item.slug}`}
-                      className="relative block aspect-square h-[80px] w-[80px]"
+                      className="relative block aspect-square min-h-[80px] min-w-[80px]"
                     >
                       <Image
                         src={item.image as string}
@@ -86,7 +86,7 @@ const ShoppingCard = () => {
                     </Link>
                     <div className="pr-8 text-sm">
                       <h2 className="font-bold">{item.name}</h2>
-                      <p className="my-2 text-sm text-slate-100 dark:text-slate-300">{`${item.description?.substring(0, 50)}...`}</p>
+                      <p className="my-2 text-sm text-slate-100 dark:text-slate-300">{`${item.introduction?.substring(0, 75)}...`}</p>
                       <h2 className="font-semibold">
                         {item.price.toPrecision(5)} {item.currency} |{" "}
                         <span className="text-red-600">

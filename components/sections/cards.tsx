@@ -38,10 +38,10 @@ const Cards = () => {
       <section className="sticky top-1/2 w-full -translate-y-1/2">
         <Container>
           <h2 className="mb-2 text-xl font-bold lg:text-2xl">
-            Choose Your Gender
+            Choose Your Category
           </h2>
           <p className="mb-6 text-sm opacity-80 lg:text-base">
-            Clothes are adapted to current fashion trends for each gender.
+            Clothes are adapted to current fashion trends for each people.
           </p>
           <div className="grid h-[460px] w-full grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 md:gap-6">
             <motion.div

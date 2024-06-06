@@ -7,7 +7,7 @@ import { useSelector } from "react-redux";
 import { useToast } from "./ui/use-toast";
 
 const ProductCheckout = ({ product }: any) => {
-  const { addItem, handleCartClick } = useShoppingCart();
+  const { addItem, handleCartClick, checkoutSingleItem } = useShoppingCart();
   const { size, quantity, stripeApi } = useSelector(
     (state: any) => state.product,
   );
@@ -16,9 +16,9 @@ const ProductCheckout = ({ product }: any) => {
   const productInfo = {
     id: stripeApi,
     name: `${product.name} (${size})`,
-    description: product.description,
+    introduction: product.introduction,
     price: Number(product.price),
-    currency: "EUR",
+    currency: "USD",
     image: product.images[0].url,
     slug: product.slug,
   };
@@ -36,9 +36,23 @@ const ProductCheckout = ({ product }: any) => {
     handleCartClick();
   };
 
+  const buyNow = async () => {
+    if (!size) {
+      toast({
+        title: "Uh oh! Something went wrong.",
+        description: "You need to select a size",
+        variant: "destructive",
+      });
+      return;
+    }
+    await checkoutSingleItem(stripeApi);
+  };
+
   return (
     <div className="flex items-center gap-4">
-      <Button variant={"buy"}>Buy now</Button>
+      <Button variant={"buy"} onClick={buyNow}>
+        Buy one
+      </Button>
       <Button onClick={addProduct} variant={"addToCart"}>
         Add to cart 🛒
       </Button>
